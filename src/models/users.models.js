@@ -1,7 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-// import { Videos } from "./videos.models.js";
 import env from "dotenv"
 env.config();
 
@@ -61,7 +60,7 @@ userSchema.pre("save", async function (next) {
 
     if (!this.isModified("password")) return next();
 
-    this.password = await bcrypt.hash(this.password, 10)
+    this.password = await bcrypt.hash(this.password, 10);
     next()
 });
 

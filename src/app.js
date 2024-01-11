@@ -20,16 +20,14 @@ app.use(cookieParser());
 
 // Router imports
 import userRouter from "./routes/users.routes.js";
+import videoRouter from "./routes/videos.routes.js";
+import tweetRouter from "./routes/tweet.routes.js";
 
-
+//router use
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/videos", videoRouter);
+app.use("/api/v1/tweets", tweetRouter);
 
-// app.get("/",(req,res) => {
-//     console.log("okkk");
-//     res.send("hello wold");
-//     // res.status(200).json({
-//     //     message: "okkk"
-//     // })
-// });
+
 
 export { app };
